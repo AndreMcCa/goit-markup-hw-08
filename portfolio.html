@@ -435,7 +435,7 @@
     <footer class="footer">
       <div class="footer-content container">
         <!-- Адресс -->
-        <div>
+        <div class="contact">
           <a href="./index.html" class="logo"
             >Web <span class="studio">Studio</span></a
           >
@@ -496,22 +496,24 @@
         <form action="#" class="footer-form">
           <label class="footer-label" for="spam">Подпишитесь на рассылку</label>
 
-          <input
-            class="footer-input"
-            type="email"
-            id="spam"
-            name="spam"
-            autocomplete="off"
-            placeholder="E-mail"
-            required
-          />
+          <div class="form-flex">
+            <input
+              class="footer-input"
+              type="email"
+              id="spam"
+              name="spam"
+              autocomplete="off"
+              placeholder="E-mail"
+              required
+            />
 
-          <button class="footer-button" type="submit">
-            Подписаться
-            <svg class="icon-telegram" width="24px" height="24px">
-              <use href="./images/symbol-defs.svg#telegram"></use>
-            </svg>
-          </button>
+            <button class="footer-button" type="submit">
+              Подписаться
+              <svg class="icon-telegram" width="24px" height="24px">
+                <use href="./images/symbol-defs.svg#telegram"></use>
+              </svg>
+            </button>
+          </div>
         </form>
       </div>
     </footer>
