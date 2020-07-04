@@ -1,0 +1,226 @@
+.portfolio {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+.button-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  margin-bottom: 40px;
+
+  @media screen and (min-width: 768px) {
+    margin-bottom: 30px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    margin-bottom: 50px;
+  }
+}
+
+.button-item {
+  position: relative;
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  @media screen and (max-width: 767px) {
+    margin-bottom: 15px;
+  }
+}
+
+.btn {
+  color: $color-heading;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.03em;
+
+  background-color: #f5f4fa;
+
+  border: none;
+  border-radius: 4px;
+  padding-right: 22px;
+  padding-left: 22px;
+
+  height: 38px;
+
+  @extend %transition;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $color-hover;
+    color: #ffffff;
+  }
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+    opacity: 0;
+
+    border-radius: 4px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.12), 0px 1px 2px rgba(0, 0, 0, 0.08),
+      0px 3px 1px rgba(0, 0, 0, 0.1);
+
+    transition-property: opacity;
+    @extend %transition;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+  }
+}
+
+.example-list {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin: -15px;
+  }
+}
+
+.example-item {
+  position: relative;
+
+  @media screen and (max-width: 767px) {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 30px;
+
+    width: calc(100% - 30px);
+  }
+
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 2 * 30px) / 2);
+
+    margin: 15px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: calc((100% - 3 * 30px) / 3);
+  }
+}
+
+.example-link {
+  display: block;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: flex;
+    position: absolute;
+    top: 0;
+
+    z-index: -1;
+    opacity: 0;
+
+    box-shadow: 1px 4px 6px rgba(0, 0, 0, 0.16), 0px 4px 4px rgba(0, 0, 0, 0.06),
+      0px 1px 1px rgba(0, 0, 0, 0.12);
+
+    @extend %transition;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    opacity: 1;
+  }
+
+  &:hover,
+  &:focus {
+    transition-property: box-shadow;
+    @extend %transition;
+  }
+}
+
+.example-box {
+  position: relative;
+  overflow: hidden;
+}
+
+.example-image {
+  // Наследует но не применяется???
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.example-card {
+  padding: 24px 20px;
+
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  border-left: 1px solid #eeeeee;
+  border-right: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.example-head,
+.example-subtitle {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.example-head {
+  margin-bottom: 4px;
+
+  color: $color-heading;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 2;
+  letter-spacing: 0.06em;
+}
+
+.example-subtitle {
+  color: $color-auxiliary;
+}
+
+.example-text {
+  position: absolute;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0 24px;
+
+  background: rgba(33, 150, 243, 0.9);
+  color: rgba(33, 150, 243, 0);
+  font-size: 18px;
+  line-height: 1.6;
+
+  opacity: 0;
+
+  transform: translateY(100%);
+  transition: opacity 250ms $transmition-cubic,
+    transform 250ms $transmition-cubic, color 250ms $transmition-cubic;
+
+  .example-link:hover &,
+  .example-link:focus & {
+    opacity: 1;
+    transform: translateY(0);
+    color: #ffffff;
+  }
+}

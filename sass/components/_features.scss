@@ -1,0 +1,75 @@
+.features {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+
+    border-bottom: 1px solid #ececec;
+  }
+
+  &-list {
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-wrap: wrap;
+
+      margin: -15px;
+    }
+  }
+
+  &-item {
+    @media screen and (max-width: 767px) {
+      max-width: 450px;
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      width: calc((100% - 2 * 30px) / 2);
+      margin: 15px;
+      // width: 354px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      width: calc((100% - 4 * 30px) / 4);
+      margin: 15px;
+      // width: 270px;
+    }
+  }
+
+  // Псевдоэлементы
+  &-item::before {
+    content: "";
+    display: block;
+    height: 120px;
+
+    background-color: #f5f4fa;
+    border-radius: 4px;
+
+    background-repeat: no-repeat;
+    background-position: center;
+
+    margin-bottom: 30px;
+  }
+
+  @include generateIcons($iconList);
+
+  &-subject {
+    margin-bottom: 10px;
+
+    color: $color-heading;
+    font-size: 14px;
+    line-height: 1.1;
+    text-transform: uppercase;
+
+    @media screen and (max-width: 767px) {
+      text-align: center;
+    }
+  }
+
+  &-text {
+    line-height: 1.7;
+  }
+}

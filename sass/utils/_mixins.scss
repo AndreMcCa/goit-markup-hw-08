@@ -1,0 +1,18 @@
+// @mixin psevdoelement($height, $width) {
+//   display: block;
+//   height: 120px;
+//   content: "";
+//   background-color: #f5f4fa;
+//   border-radius: 4px;
+
+//   background-repeat: no-repeat;
+//   background-position: center;
+// }
+
+@mixin generateIcons($iconList) {
+  @each $iconName in $iconList {
+    .#{$iconName}::before {
+      background-image: url("../images/#{$iconName}.svg");
+    }
+  }
+}

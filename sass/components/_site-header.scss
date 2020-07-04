@@ -1,0 +1,200 @@
+// Нижний border в Портфолио
+.page-header {
+  border-bottom: 1px solid #ececec;
+}
+
+// Шапка
+.position-menu {
+  position: relative;
+
+  @media screen and(max-width: 767px) {
+    border-bottom: 1px solid #ececec;
+  }
+}
+
+.header {
+  margin: 0 auto;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media screen and (min-width: 480px) {
+    width: 480px;
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 768px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 1200px;
+  }
+
+  @media screen and(max-width: 767px) {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .menu-container {
+    @media screen and (max-width: 767px) {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+
+      z-index: 1;
+
+      padding-top: 40px;
+      padding-bottom: 60px;
+      text-align: center;
+
+      display: none;
+
+      background-color: #ffffff;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.16),
+        0px 2px 4px rgba(0, 0, 0, 0.08), 0px 4px 8px rgba(0, 0, 0, 0.04);
+
+      &.is-open {
+        display: block;
+      }
+    }
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      align-items: center;
+      flex-grow: 2;
+      justify-content: space-between;
+    }
+  }
+}
+
+.site-nav {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 40px;
+  }
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
+
+  & .link {
+    display: inline-block;
+
+    color: $color-heading;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+
+    &:hover,
+    &:focus {
+      color: $color-hover;
+      @extend %transition;
+    }
+
+    @media screen and (min-width: 768px) {
+      font-size: 14px;
+    }
+
+    @media screen and (max-width: 767px) {
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+    @media screen and (min-width: 768px) {
+      padding-top: 32px;
+      padding-bottom: 32px;
+    }
+  }
+
+  & .title:not(:last-child) {
+    @media screen and (min-width: 768px) {
+      margin-right: 50px;
+    }
+  }
+
+  & .active {
+    position: relative;
+    color: $color-hover;
+
+    &::after {
+      @extend %nav-after;
+    }
+  }
+
+  & .no-active {
+    position: relative;
+
+    &::after {
+      @extend %nav-after;
+
+      transform-origin: left;
+      transform: scale(0);
+      @extend %transition;
+    }
+
+    &:hover::after,
+    &:focus::after {
+      background-color: $color-hover;
+      transform: scale(1);
+    }
+  }
+
+  & .no-active-left::after {
+    transform-origin: right;
+  }
+}
+
+.auth-nav {
+  @media screen and (min-width: 1200px) {
+    display: flex;
+  }
+
+  .title:not(:last-child) {
+    @media screen and (max-width: 767px) {
+      margin-bottom: 16px;
+    }
+
+    @media screen and (min-width: 768px) and (max-width: 1199px) {
+      margin-bottom: 10px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      margin-right: 30px;
+    }
+  }
+
+  .link {
+    font-size: 18px;
+    line-height: 0.02em;
+
+    @media screen and (min-width: 768px) {
+      font-size: 12px;
+    }
+
+    @media screen and (min-width: 1200px) {
+      font-size: 14px;
+    }
+
+    color: $color-auxiliary;
+    @extend %transition;
+
+    &:hover,
+    &:focus {
+      color: $color-hover;
+    }
+  }
+
+  .button-icon {
+    margin-right: 10px;
+    fill: $color-auxiliary;
+
+    @extend %transition;
+  }
+
+  .link:hover .button-icon,
+  .link:focus .button-icon {
+    fill: $color-hover;
+  }
+}
